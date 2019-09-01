@@ -20,7 +20,7 @@ def jogada(torres_de_hanoi):
         de = int(de)
         para = int(para)
         os.system('cls' if os.name == 'nt' else 'clear')
-        torres_de_hanoi.movimento(de, para)
+        torres_de_hanoi.movimento(de - 1, para - 1)
         torres_de_hanoi.exibe()
 
     except (ValueError, IndexError):

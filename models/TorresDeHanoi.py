@@ -6,13 +6,17 @@ class TorresDeHanoi():
         self.__movimentos = 0
 
     def movimento(self, de, para):
-        if (not self.__torres[de - 1].vazia() and (
-                self.__torres[para - 1].vazia() or self.__torres[para - 1].ultimo() > self.__torres[de - 1].ultimo())):
-            self.__torres[para - 1].empilha(self.__torres[de - 1].ultimo())
-            self.__torres[de - 1].desempilha()
+        if (not self.__torres[de].vazia() and (
+                self.__torres[para].vazia() or 
+                self.__torres[para].ultimo() > self.__torres[de].ultimo()
+                )):
+            
+            self.__torres[para].empilha(self.__torres[de].ultimo())
+            self.__torres[de].desempilha()
             self.__movimentos += 1
         else:
             print('Movimento Invalido')
+    
     @property
     def movimentos(self):
         return self.__movimentos
